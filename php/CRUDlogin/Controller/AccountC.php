@@ -1,5 +1,5 @@
 <?php
-    include "../connection.php";
+    include "../../connection.php";
     include_once "../Model/account.php";
 class AccountC {
      /*function afficherAlbum(){
@@ -33,8 +33,8 @@ class AccountC {
     function ajouterAccount ($FirstName,$LastName,$Email,$Password) {
         $db = connection::getConnexion();
         try { 
-            $query = $db->prepare ( 'INSERT INTO account (FirstName,LastName,Email,Password) VALUES (:FirstName, :LastName, :Email, :Password)');
-        $query-> execute ([ 'FirstName' => $FirstName , 'LastName' => $LastName , 'image' => $image
+            $query = $db->prepare ( 'INSERT INTO createaccount (FirstName,LastName,Email,Password) VALUES (:FirstName, :LastName, :Email, :Password)');
+        $query-> execute ([ 'FirstName' => $FirstName , 'LastName' => $LastName , 'Email' => $Email, 'Password' => $Password
         
         
         ]);
@@ -45,6 +45,7 @@ class AccountC {
         }
 
     }
+    /*
      function supprimer ( $idAlbum ) { 
         $db = connection::getConnexion();
         try { 
@@ -77,8 +78,9 @@ class AccountC {
             }            
             
             }
-        }
+        }*/
 
      
 
 
+    }

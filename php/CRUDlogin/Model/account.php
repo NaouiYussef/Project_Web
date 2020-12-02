@@ -16,7 +16,7 @@
         }
 
         public function getId () {
-            return $this->id;
+            return $this->Id;
         }
 
         public function getFirstName (){
@@ -36,17 +36,17 @@
         }
 
         public function setFirstName ($FirstName){
-            $this->titre = $FirstName;
+            $this->FirstName = $FirstName;
         }
 
         public function setLastName ($LastName){
-            $this->image = $LastName;
+            $this->LastName = $LastName;
         }
 
         public function setEmail ($Email){
-            $this->prix = $Email;
+            $this->Email = $Email;
         }
         public function setPassword ($Password){
-            $this->prix = $Password;
+            $this->Password = $Password;
         }
     }
