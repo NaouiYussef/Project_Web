@@ -2,9 +2,9 @@
     include "../../connection.php";
     include_once "../Model/account.php";
 class AccountC {
-     /*function afficherAlbum(){
+     function afficherAccount(){
 
-        $sql="SELECT * FROM album";
+        $sql="SELECT * FROM createaccount";
         $db = connection::getConnexion();
         try{
             $liste = $db->query($sql);
@@ -14,7 +14,7 @@ class AccountC {
             die('Erreur: '.$e->getMessage());
         }
     
-    }*/
+    }
    /* public function getAlbumById($idAlbum) {
         $db = connection::getConnexion();
         try {
@@ -45,21 +45,21 @@ class AccountC {
         }
 
     }
-    /*
-     function supprimer ( $idAlbum ) { 
+    
+     function supprimer ( $Id ) { 
         $db = connection::getConnexion();
         try { 
-            $query = $db -> prepare ( 'DELETE FROM album where idAlbum =:idAlbum');
-            $query -> execute ( ['idAlbum' => $idAlbum
+            $query = $db -> prepare ( 'DELETE FROM createaccount where Id =:Id');
+            $query -> execute ( ['Id' => $Id
             
             ]);
-            echo $query -> rowCount () . " records DELETED sucuefnjezanf " ;
+            
         }
         catch(PDOException $e) {
             $e -> getMessage();
         }
         }
-
+/*
         function modifier ($album,$idAlbum)
         {
             $db = connection::getConnexion();
