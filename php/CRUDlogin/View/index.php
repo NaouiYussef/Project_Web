@@ -222,7 +222,7 @@ $liste=$Client->afficherAccount();
                                                    <td><?PHP echo $Client['FirstName']; ?></td>
                                                    <td><?PHP echo $Client['LastName']; ?></td> 
                                                    <td><?PHP echo $Client['Email']; ?></td> 
-                                                   <td><?PHP echo $Client['Password']; ?></td> 
+                                                   <td><?PHP echo md5($Client['Password']); ?></td> 
                                                    <td><a href="delete.php?Id=<?= $Client ['Id']?>" ><i class="far fa-trash-alt"></a></i></td>
                                                    <td> <a href="#">Modifer</a></td>
                                                     <!--   <form method="POST" action="deleteClient.php">
