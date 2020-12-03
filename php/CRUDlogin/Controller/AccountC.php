@@ -15,21 +15,7 @@ class AccountC {
         }
     
     }
-   /* public function getAlbumById($idAlbum) {
-        $db = connection::getConnexion();
-        try {
-           
-            $query = $db->prepare(
-                'SELECT * FROM album WHERE idAlbum = :idAlbum'
-            );
-            $query->execute([
-                'idAlbum' => $idAlbum
-            ]);
-            return $query->fetch();
-        } catch (PDOException $e) {
-            $e->getMessage();
-        }
-    }*/
+  
     function ajouterAccount ($FirstName,$LastName,$Email,$Password) {
         $db = connection::getConnexion();
         try { 
@@ -59,26 +45,49 @@ class AccountC {
             $e -> getMessage();
         }
         }
-/*
-        function modifier ($album,$idAlbum)
-        {
-            $db = connection::getConnexion();
-            try { $query =$db->prepare( ' UPDATE album SET titre = :titre , prix = :prix , image = :image where idAlbum =: idAlbum');
 
+        function modifier ($account1,$Id)
+        {
+            try {
+            $db = connection::getConnexion();
+             $query =$db->prepare( ' UPDATE createaccount SET 
+             FirstName= :FirstName , 
+             LastName = :LastName , 
+             Email = :Email,
+              Password= :Password 
+              WHERE Id =: Id'
+              );
+       
               $query -> execute ( [   
-                'titre' => $album->getTitre(),
-                'prix' => $album->getPrix(),
-                'image' => $album->getImage(),
-                'idAlbum' => $idAlbum
+                'FirstName' => $account1->getFirstName(),
+                'LastName' => $account1->getLastName(),
+                'Email' => $account1->getEmail(),
+                'Password' => $account1->getPassword(),
+                'Id' => $Id
 
               ]);    
+             
                echo $query->rowCount() . " records UPDATED successfully";
             } catch (PDOException $e) {
                 $e->getMessage();
             }            
             
             }
-        }*/
+            
+		function recupererUtilisateur($Id){
+			$sql="SELECT * from createaccount where Id=$Id";
+			$db = connection::getConnexion();
+			try{
+				$query=$db->prepare($sql);
+				$query->execute();
+				$user=$query->fetch();
+				return $user;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}
+		}
+        
 
      
 

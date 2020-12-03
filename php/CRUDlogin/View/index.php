@@ -224,17 +224,8 @@ $liste=$Client->afficherAccount();
                                                    <td><?PHP echo $Client['Email']; ?></td> 
                                                    <td><?PHP echo md5($Client['Password']); ?></td> 
                                                    <td><a href="delete.php?Id=<?= $Client ['Id']?>" ><i class="far fa-trash-alt"></a></i></td>
-                                                   <td> <a href="#">Modifer</a></td>
-                                                    <!--   <form method="POST" action="deleteClient.php">
-                                                   <input type="submit" name="supprimer" value="supprimer">
-                                                   <input type="hidden" value=<?PHP// echo $CLient['idClient']; ?> name="idClient">
-                                                   </form>
-                                                    </td>
-                                                    <td> 
-                                                        <form method="POST" action="modifier.php">
-                                                   <input type="submit" name="Modifier" value="Modifier">
-                                                   <input type="hidden" value=<?PHP //echo $CLient['idClient']; ?> name="idClient">
-                                                   </form>-->
+                                                   <td> <a href="modifier_utilisateur.php?Id=<?PHP echo $Client['Id']; ?>">Modifier</a></td>
+                                                   
                                                     
                                             </tr>
                                             <?PHP

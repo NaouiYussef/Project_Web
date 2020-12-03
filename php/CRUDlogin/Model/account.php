@@ -1,52 +1,37 @@
 <?php
     class account {
-        private ?int $Id = null;
-        private string $FirstName;
-        private string $LastName;
-        private string $Email;
-        private string $Password;
+       
+        private ?string $FirstName = null;
+        private ?string $LastName= null;
+        private ?string $Email= null;
+        private ?string $Password= null;
         
         
 
-        public function __construct($FirstName, $LastName, $Email, $Password){
+         function __construct( string $FirstName, string $LastName, string $Email, string $Password){
             $this->FirstName = $FirstName;
             $this->LastName = $LastName;
             $this->Email = $Email;
             $this->Password = $Password;
         }
 
-        public function getId () {
-            return $this->Id;
-        }
+        
 
-        public function getFirstName (){
+         function getFirstName () :string { 
             return $this->FirstName ;
         }
 
-        public function getLastName (){
+         function getLastName ():string{
             return $this->LastName ;
         }
 
-        public function getEmail (){
+         function getEmail ():string{
             return $this->Email ;
         }
         
-        public function getPassword (){
+         function getPassword ():string{
             return $this->Password ;
         }
 
-        public function setFirstName ($FirstName){
-            $this->FirstName = $FirstName;
-        }
-
-        public function setLastName ($LastName){
-            $this->LastName = $LastName;
-        }
-
-        public function setEmail ($Email){
-            $this->Email = $Email;
-        }
-        public function setPassword ($Password){
-            $this->Password = $Password;
-        }
     }
+    ?>
