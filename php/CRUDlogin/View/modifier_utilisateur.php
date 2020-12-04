@@ -19,7 +19,7 @@
        
             //header('refresh:5;url=index.php');
         }
-        echo $_POST["FirstName"];
+        
         
       
      
