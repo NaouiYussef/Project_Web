@@ -107,7 +107,7 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputPassword">Password</label>
                                                     <input class="form-control py-4" type="password"
-                                                        name="Password"  id="inputPassword" value = "<?php echo $user['Password']; ?>"  />
+                                                        name="Password"  id="inputPassword" value = "<?php echo $user['Password']; ?>" readonly />
                                                 </div>
                                             </div>
                                            

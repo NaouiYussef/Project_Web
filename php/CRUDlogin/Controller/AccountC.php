@@ -86,7 +86,35 @@ class AccountC {
 			catch (Exception $e){
 				die('Erreur: '.$e->getMessage());
 			}
-		}
+        }
+        function connexionAccount($Email,$Password) {
+            $sql="SELECT * FROM createaccount WHERE Email='" . $Email ."' and Password = '". $Password."'";
+            $db = connection::getConnexion();
+            try {
+                $query=$db->prepare($sql);
+                $query->execute();
+                $count=$query->rowCount();
+                if($count==0)
+                {$message= "pseudo ou mot de passe incorrect";
+                
+                }
+                else { 
+                    $x = $query->fetch();
+                    $message = $x['role'];
+                }
+
+
+            }
+            catch (Exception $e)
+            {
+                $message= " ".$e->getMessage();        
+                }
+                return $message;
+        }
+
+    
+        
+
         
 
      
