@@ -8,7 +8,8 @@
 	if (
 		isset($_POST["FirstName"]) && 
         isset($_POST["LastName"]) &&
-        isset($_POST["Email"])  
+        isset($_POST["Email"])  &&
+        isset($_POST["Password"])  
        
     )
     {                                                                                                  
@@ -18,7 +19,7 @@
        
             //header('refresh:5;url=index.php');
         }
-        
+        echo $_POST["FirstName"];
         
       
      
@@ -106,7 +107,7 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputPassword">Password</label>
                                                     <input class="form-control py-4" type="password"
-                                                        name="Password"  id="inputPassword" value = "<?php echo $user['Password']; ?>" disabled />
+                                                        name="Password"  id="inputPassword" value = "<?php echo $user['Password']; ?>"  />
                                                 </div>
                                             </div>
                                            

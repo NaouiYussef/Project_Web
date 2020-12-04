@@ -55,7 +55,7 @@ class AccountC {
              LastName = :LastName , 
              Email = :Email,
               Password= :Password 
-              WHERE Id =: Id'
+              WHERE Id = :Id'
               );
        
               $query -> execute ( [   
