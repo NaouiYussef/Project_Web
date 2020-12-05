@@ -4,7 +4,7 @@
 class AccountC {
      function afficherAccount(){
 
-        $sql="SELECT * FROM createaccount";
+        $sql="SELECT * FROM utilisateur";
         $db = connection::getConnexion();
         try{
             $liste = $db->query($sql);
@@ -19,7 +19,7 @@ class AccountC {
     function ajouterAccount ($FirstName,$LastName,$Email,$Password) {
         $db = connection::getConnexion();
         try { 
-            $query = $db->prepare ( 'INSERT INTO createaccount (FirstName,LastName,Email,Password) VALUES (:FirstName, :LastName, :Email, :Password)');
+            $query = $db->prepare ( 'INSERT INTO utilisateur (FirstName,LastName,Email,Password) VALUES (:FirstName, :LastName, :Email, :Password)');
         $query-> execute ([ 'FirstName' => $FirstName , 'LastName' => $LastName , 'Email' => $Email, 'Password' => $Password
         
         
@@ -35,7 +35,7 @@ class AccountC {
      function supprimer ( $Id ) { 
         $db = connection::getConnexion();
         try { 
-            $query = $db -> prepare ( 'DELETE FROM createaccount where Id =:Id');
+            $query = $db -> prepare ( 'DELETE FROM utilisateur where Id =:Id');
             $query -> execute ( ['Id' => $Id
             
             ]);
@@ -50,7 +50,7 @@ class AccountC {
         {
             try {
             $db = connection::getConnexion();
-             $query =$db->prepare( ' UPDATE createaccount SET 
+             $query =$db->prepare( ' UPDATE utilisateur SET 
              FirstName= :FirstName , 
              LastName = :LastName , 
              Email = :Email,
@@ -75,7 +75,7 @@ class AccountC {
             }
             
 		function recupererUtilisateur($Id){
-			$sql="SELECT * from createaccount where Id=$Id";
+			$sql="SELECT * from utilisateur where Id=$Id";
 			$db = connection::getConnexion();
 			try{
 				$query=$db->prepare($sql);
@@ -88,7 +88,7 @@ class AccountC {
 			}
         }
         function connexionAccount($Email,$Password) {
-            $sql="SELECT * FROM createaccount WHERE Email='" . $Email ."' and Password = '". $Password."'";
+            $sql="SELECT * FROM utilisateur WHERE Email='" . $Email ."' and Password = '". $Password."'";
             $db = connection::getConnexion();
             try {
                 $query=$db->prepare($sql);
