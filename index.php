@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +37,21 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact & Feedback</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="back/dist/login.html"><i class="fas fa-user-alt"></i></a></li>
+                <?php
+session_start();
+if (empty($_SESSION['m_un'])) {?>
+    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="php/CRUDlogin/View/login.php"><i class="fas fa-user-alt"></i></a></li>
+    
+<?php } else { ?> 
+    <li class="nav-item" class="nav-link js-scroll-trigger" ><?php include "logged.php"; ?></li>
+    
+
+<?php
+
+}
+?>
+                
+                <!--  -->
             </ul>
         </div>
     </div>

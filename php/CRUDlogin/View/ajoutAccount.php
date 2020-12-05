@@ -9,4 +9,4 @@ $Password=$_POST['Password'];
 $nouv=new AccountC();
 
 $nouv->ajouterAccount($FirstName,$LastName,$Email,$Password);
-header('location:index.php');
+header('location:back.php');

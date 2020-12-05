@@ -121,7 +121,7 @@
                                     <?php } ?>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <div class="small"><a href="index.php">Return to DashBoard</a></div>
+                                    <div class="small"><a href="back.php">Return to DashBoard</a></div>
                                 </div>
                             </div>
                         </div>

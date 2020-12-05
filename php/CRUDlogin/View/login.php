@@ -14,7 +14,8 @@ if (!empty($_POST["Email"]) &&
 $message=$userC->connexionAccount( $_POST["Email"] , $_POST["Password"]);
 $_SESSION ['e'] = $_POST["Email"];
 if ($message!='pseudo ou mot de passe incorrect'){
-header('Location:index.php');}
+    $_SESSION['m_un']=$_POST["Email"];
+header('Location:../../../index.php');}
 else{
     $message='pseudo ou mot de passe incorrect';
     header("Location: login.php?error=Incorect email or password");
@@ -92,12 +93,12 @@ else{
                                                 <a class="small" href="password.html">Forgot Password?</a>
                                                 
                                                 <input class="btn btn-primary"  type="submit" 
-                                                    value="Login">
+                                                    value="Login" href="logged.html">
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="../../php/CRUDlogin/View/register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
