@@ -8,12 +8,12 @@
             <ul>
               <li>
                 <a href="#">
-                 <img src="../assets/img/Profile.png" alt="Admin" width="40"><i class="fas fa-angle-down"></i>
+                 <p><?php echo $_SESSION['FirstName'] ?> <br> </p> <img src="../assets/img/Profile.png" alt="Admin" width="40"><i class="fas fa-angle-down"></i>
                 </a>
                  
                 <div class="dropdown">
                     <ul>
-                      <li><a href="#"><br><i class="fas fa-user"></i>Profile</a></li>
+                      <li><a href="Profile.php"><br><i class="fas fa-user" ></i>Profile</a></li>
                       
                     
                       <li><a href="signout.php"><i class="fas fa-sign-out-alt"></i>Signout</a></li>

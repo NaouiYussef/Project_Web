@@ -1,4 +1,8 @@
+<?php
+session_start();
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +42,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact & Feedback</a></li>
                 <?php
-session_start();
+
 if (empty($_SESSION['m_un'])) {?>
     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login.php"><i class="fas fa-user-alt"></i></a></li>
     

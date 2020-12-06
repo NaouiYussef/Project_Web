@@ -67,7 +67,7 @@ class AccountC {
 
               ]);    
              
-               echo $query->rowCount() . " records UPDATED successfully";
+              
             } catch (PDOException $e) {
                 $e->getMessage();
             }            
@@ -101,10 +101,15 @@ class AccountC {
                 else { 
                     $x = $query->fetch();
                     $message = $x['role'];
+                    session_start(); 
+                    $_SESSION['user_id']= $x['Id'];
+                    $_SESSION['FirstName']= $x['FirstName'];
+                    $_SESSION['LastName']= $x['LastName'];
+                }
                 }
 
 
-            }
+            
             catch (Exception $e)
             {
                 $message= " ".$e->getMessage();        
