@@ -9,6 +9,7 @@
     <meta name="author" content="" />
     <title>Page Title - SB Admin</title>
     <link href="../../back/assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/error.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
         crossorigin="anonymous"></script>
 </head>
@@ -18,19 +19,22 @@
 
     </script>
     <div id="layoutAuthentication">
-        <div id="layoutAuthentication_content">=
+        <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
+                                  
                                     <h3 class="text-center font-weight-light my-4">Create Account</h3>
                                 </div>
                                 <div class="card-body">
 
-                                    <form name="f" action="ajoutAccount.php"  onsubmit="return password()" method="POST" >
-
+                                    <form name="f" id="loginForm" action="ajoutAccount.php"  onsubmit="return password()" method="POST" >
+                                    <?php if (isset($_GET['error'])) { ?>
+                                        <p class="error"><?php echo $_GET['error']; ?></p>
+                                    <?php } ?>
                                         <div class="form-row">
                                             <div class="col-md-6">
 
@@ -38,7 +42,7 @@
 
                                                     <label class="small mb-1" for="inputFirstName">First Name</label>
                                                     <input class="form-control py-4" id="inputFirstName" type="text"
-                                                        name="FirstName" placeholder="Enter first name" 
+                                                        name="FirstName" placeholder="Enter first name" onblur="nom_prenom1()"
                                                        />
                                                 </div>
                                             </div>
@@ -46,15 +50,15 @@
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="inputLastName">Last Name</label>
                                                     <input class="form-control py-4" id="inputLastName" type="text"
-                                                        name="LastName" placeholder="Enter last name" onblur="nom_prenom()"/>
+                                                        name="LastName" placeholder="Enter last name" onblur="nom_prenom()" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                            <input class="form-control py-4" id="inputEmailAddress" type="email"
+                                            <input class="form-control py-4" id="inputEmailAddress" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                                 name="Email" aria-describedby="emailHelp"
-                                                placeholder="Enter email address" onblur="email()"/>
+                                                placeholder="Enter email address" onblur="email()" required="required" />
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -76,8 +80,10 @@
                                             </div>
 
                                             <div class="form-group mt-4 mb-0">
+                                                
                                                 <input class="btn btn-primary btn-block"  type="submit" 
-                                                    value="Create Account">
+                                                    value="Create Account" id="loginBtn"   disabled>
+                                                   
                                             </div>
                                     </form>
                                 </div>
