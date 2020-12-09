@@ -5,17 +5,23 @@
         private ?string $LastName= null;
         private ?string $Email= null;
         private ?string $Password= null;
+        private ?int $Role= null;
         
         
 
-         function __construct( string $FirstName, string $LastName, string $Email, string $Password){
+         function __construct( string $FirstName, string $LastName, string $Email, string $Password, int $Role){
             $this->FirstName = $FirstName;
             $this->LastName = $LastName;
             $this->Email = $Email;
             $this->Password = $Password;
+            $this->Role = $Role;
+
         }
 
         
+        function getRole () :string { 
+            return $this->Role ;
+        }
 
          function getFirstName () :string { 
             return $this->FirstName ;

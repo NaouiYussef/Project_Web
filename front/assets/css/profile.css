@@ -25,7 +25,11 @@ form label{
     font-size: 18px;
     color:black;
 }
-
+.groupe {
+    position: relative;
+    left:350px;
+    top : -150px;
+}
 form .form-control,form .form-control:focus{
     border-color:transparent;
     border-bottom-color: black;

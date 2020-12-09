@@ -100,8 +100,9 @@ class AccountC {
                 }
                 else { 
                     $x = $query->fetch();
-                    $message = $x['role'];
-                    session_start(); 
+  
+                    session_start();
+                    $_SESSION['role']=$x['Role']; 
                     $_SESSION['user_id']= $x['Id'];
                     $_SESSION['FirstName']= $x['FirstName'];
                     $_SESSION['LastName']= $x['LastName'];
@@ -115,6 +116,7 @@ class AccountC {
                 $message= " ".$e->getMessage();        
                 }
                 return $message;
+
         }
 
 

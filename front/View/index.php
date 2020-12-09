@@ -22,6 +22,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/test.css">
 </head>
 
 <body id="page-top">
@@ -574,8 +575,8 @@ if (empty($_SESSION['m_un'])) {?>
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Contact form JS-->
-    <script src="../assets/mail/jqBootstrapValidation.js"></script>
-    <script src="../assets/mail/contact_me.js"></script>
+    <script src="../assets/js/jqBootstrapValidation.js"></script>
+    <script src="../assets/js/contact_me.js"></script>
     <!-- Core theme JS-->
     <script src="../assets/js/scripts.js"></script>
 </body>
