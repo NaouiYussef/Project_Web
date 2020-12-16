@@ -28,7 +28,7 @@ var prenom=f.LastName.value;
 if (nom==prenom){
 
 bt.disabled=true;
-alert ( "Le nom et le prenom sont égaux!") ;
+alert ( "Le nom et le prenom sont égaux!") ;z
 return false;}
 else if (nom.length<3 || prenom.length<3){
 

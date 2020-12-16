@@ -1,7 +1,8 @@
 <?php
+session_start();
 include "../Controller/AccountC.php";
 include_once '../Model/account.php';
-session_start();
+
 $utilisateur1 = new AccountC();
 $utilisateur2 = new AccountC();
 $userC = new AccountC();

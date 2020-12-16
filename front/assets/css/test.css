@@ -1,57 +1,53 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: 'Josefin Sans', sans-serif;
-  
+  font-family: "Josefin Sans", sans-serif;
 }
 
-.right{
-  position:absolute;
-  bottom:-25px;
-  
+.right {
+  position: absolute;
+  bottom: -25px;
 }
 
-.wrapper .navbar{
+.wrapper .navbar {
   width: 420px;
 
   display: flex;
   justify-content: space-between;
   padding: 10px 25px;
   border-radius: 5px;
-  
 }
 
-.wrapper .navbar ul li a{
+.wrapper .navbar ul li a {
   color: white;
 }
 
 .wrapper .navbar .left ul,
-.wrapper .navbar .right ul li a{
+.wrapper .navbar .right ul li a {
   display: flex;
   align-items: center;
   height: 40px;
 }
 
 .wrapper .navbar .left ul li,
-.wrapper .navbar .right img{
+.wrapper .navbar .right img {
   margin: 0 10px;
 }
 
-.wrapper .navbar .right a{
+.wrapper .navbar .right a {
   text-align: right;
 }
 
-.wrapper .navbar .right a span{
+.wrapper .navbar .right a span {
   font-size: 10px;
 }
 
-.wrapper .navbar .right ul li{
+.wrapper .navbar .right ul li {
   position: relative;
 }
 
@@ -63,12 +59,10 @@
   padding: 10px 25px;
   border-radius: 5px;
   display: none;
-  
 }
 
 .wrapper .navbar .right ul li .dropdown .fas {
   margin-right: 10px;
-  
 }
 
 .wrapper .navbar .right ul li .dropdown:before {
@@ -78,19 +72,16 @@
   left: 50%;
   transform: translateX(-50%);
   border: 10px solid;
-  
+
   border-color: transparent transparent black transparent;
-  
 }
 
 .wrapper .navbar .right ul li.active .dropdown {
-  
   display: block;
-  
 }
-.fa-user{
+.fa-user {
   vertical-align: sub;
   position: relative;
-  bottom:3px;
-  left:-2px;
+  bottom: -7px;
+  left: 0px;
 }

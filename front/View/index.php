@@ -43,18 +43,19 @@ session_start();
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact & Feedback</a></li>
                 <?php
-
-if (empty($_SESSION['m_un'])) {?>
-    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login.php"><i class="fas fa-user-alt"></i></a></li>
-    
-<?php } else { ?> 
-    <li class="nav-item" class="nav-link js-scroll-trigger" ><?php include "logged.php"; ?></li>
-    
-
-<?php
-
-}
-?>
+                    if (empty($_SESSION['m_un'])) {
+                ?>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="login.php">
+                                <i class="fas fa-user-alt"></i>
+                            </a>
+                        </li>
+                        
+                <?php } else { ?> 
+                        <li class="nav-item" class="nav-link js-scroll-trigger" ><?php include "logged.php"; ?></li>
+                <?php
+                }
+                ?>
                
             </ul>
         </div>

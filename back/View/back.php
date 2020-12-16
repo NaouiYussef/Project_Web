@@ -3,8 +3,8 @@ include_once "../Controller/AccountC.php";
 
 $Client=new AccountC();
 $liste=$Client->afficherAccount();
-
-
+if(empty($_POST['search'])    )
+$_POST['search']="";
 ?>
 
 <!DOCTYPE html>
@@ -21,17 +21,7 @@ $liste=$Client->afficherAccount();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            
            
-            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -123,11 +113,15 @@ $liste=$Client->afficherAccount();
                             </div>
                         </div>
                         <div class="card mb-4">
+                        <form method="POST">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                DataTable Example
+                                Search User: <input type="text" name="search"></input>
+                               <button type="submit" > <i class="fas fa-search"></i></button>
                             </div>
+                          
                             <div class="card-body">
+                                
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
@@ -155,7 +149,13 @@ $liste=$Client->afficherAccount();
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        <?php foreach($liste as $Client) { ?>
+
+                                        <?php 
+                                        
+                                        if ( $_POST['search']==""){
+                                        foreach($liste as $Client) {
+                                            
+                                            ?>
                                             <tr>
                                                    
                                                    
@@ -170,13 +170,32 @@ $liste=$Client->afficherAccount();
                                                     
                                             </tr>
                                             <?PHP
-                                              }
+                                              }}
+                                              else {
+                                                foreach($liste as $Client) {
+                                            
+                                                    ?>
+                                                    <tr>
+                                                           
+                                                         <?php  if($_POST['search']==$Client['Id']||$_POST['search']==$Client['FirstName']||$_POST['search']==$Client['LastName']||$_POST['search']==$Client['Email']){    ?>
+                                                           <td><?PHP echo $Client['Id']; ?></td> 
+                                                           <td><?PHP echo $Client['FirstName']; ?></td>
+                                                           <td><?PHP echo $Client['LastName']; ?></td> 
+                                                           <td><?PHP echo $Client['Email']; ?></td> 
+                                                           <td><?PHP echo md5($Client['Password']); ?></td> 
+                                                           <td><a href="delete.php?Id=<?= $Client ['Id']?>" ><i class="far fa-trash-alt"></a></i></td>
+                                                           <td> <a href="modifier_utilisateur.php?Id=<?PHP echo $Client['Id']; ?>">Modifier</a></td>
+                                                           
+                                                            
+                                                    </tr>
+                                            <?php  }}}
                                               ?>
     
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </main>

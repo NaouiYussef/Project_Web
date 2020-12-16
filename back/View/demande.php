@@ -6,11 +6,15 @@ $Client1 = new formulaireC();
 $liste = $Client->afficherformulaire();
 if (	
     isset($_GET['Id']) && 
-    isset($_GET['option']))
+    isset($_GET['option']) &&  isset($_GET['idf']))
 {
    
 $Client1->modifierRole($_GET['option'],$_GET['Id']);
+$Client1->supprimer($_GET['idf']);
+
 echo '<script> alert("Demande accepté. Le role a était modifier.");</script>';
+header("Refresh:0;url=demande.php");
+exit;
 }
 
 ?>
@@ -125,7 +129,7 @@ echo '<script> alert("Demande accepté. Le role a était modifier.");</script>';
                                                 <td><img height="200px" src="../../front/View/<?PHP echo $Client['cv']; ?>"></td>
                                                 <td><?PHP echo $Client['idClient']; ?></td>
                                                 <td><a href="deleteformulaire.php?id=<?= $Client['id'] ?>" ><i class="fas fa-times-circle"></a></i></td>
-                                                   <td> <a href="demande.php?Id=<?PHP echo $Client['idClient']; ?>&option=<?PHP echo $Client['option']; ?>"><i class="fas fa-check"></a></i></td>
+                                                   <td> <a href="demande.php?Id=<?PHP echo $Client['idClient']; ?>&option=<?PHP echo $Client['option']; ?>&idf=<?= $Client['id'] ?>"><i class="fas fa-check"></a></i></td>
 
 
                                             </tr>
