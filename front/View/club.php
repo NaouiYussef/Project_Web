@@ -18,16 +18,18 @@
     <link href="../assets/css/styles.css" rel="stylesheet" />
     <link href="../assets/css/clubs/clubs-homepage.css" rel="stylesheet" />
 </head>
-
-<body id="page-top">
+<?php include "header.php"; ?>
+<header class="masthead" >
+<body id="page-top" >
     <!-- Navigation-->
-    <?php include "header.php"; ?>
+    
 
     
 
     <!-- Masthead-->
-  
-    <div class="container">
+   
+    
+    <div class="container" >
 
         <div class="row">
 
@@ -178,8 +180,9 @@
             <!-- /.col-lg-9 -->
 
         </div>
+      
         <!-- /.row -->
-        <a href="ajout_gym.php">Submit now</a>
+        
         <a href="ajout_gym.php"><button class="btn btn-primary btn-lg btn-block" type="submit">Ajouter une salle</button></a>
     </div>
     <!-- Bootstrap core JS-->
