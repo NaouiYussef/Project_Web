@@ -1,0 +1,8 @@
+@media only screen and (max-width: 1024px) {
+    .qodef-content .qodef-content-inner > .qodef-container > .qodef-container-inner, .qodef-content .qodef-content-inner > .qodef-full-width > .qodef-full-width-inner {
+        padding: 0px!important;
+    }
+    }
+    .qodef-content .qodef-content-inner > .qodef-full-width > .qodef-full-width-inner {
+        padding: 0px!important;
+    }

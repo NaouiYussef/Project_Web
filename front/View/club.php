@@ -22,8 +22,11 @@
 <body id="page-top">
     <!-- Navigation-->
     <?php include "header.php"; ?>
-    <!-- Masthead-->
+
     
+
+    <!-- Masthead-->
+  
     <div class="container">
 
         <div class="row">
@@ -46,13 +49,14 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                       
+                            <img class="d-block img-fluid" src="../assets/img/gym1.jpg"  alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                            <img class="d-block img-fluid" src="../assets/img/gym2.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                            <img class="d-block img-fluid" src="../assets/img/gym3.jpg "alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -69,13 +73,15 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/img/gym4.jpg" alt=""></a>
+                            
+
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Item One</a>
+                                    <a href="california/california_gym.php">California Gym</a>
                                 </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                                <h5>$28</h5>
+                                <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -85,13 +91,13 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/img/gym5.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Item Two</a>
+                                    <a href="#">Alpha Gym</a>
                                 </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                                <h5>$30</h5>
+                                <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -101,13 +107,15 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/img/gym2.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Item Three</a>
+                                    <a href="#">Oxy-Gym</a>
+                                                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="coachs.php">Coachs</a></li>
+
                                 </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                                <h5>$15.25</h5>
+                                <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -117,13 +125,13 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/img/gym1.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Item Four</a>
+                                    <a href="#">Smart Gym</a>
                                 </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                                <h5>$50</h5>
+                                <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -133,13 +141,13 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/img/gym6.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Item Five</a>
+                                    <a href="#">Tigers Gym</a>
                                 </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                                <h5>$18.30</h5>
+                                <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -149,13 +157,13 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/img/gym3.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Item Six</a>
+                                    <a href="#">Bees Gym</a>
                                 </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                                <h5>$69</h5>
+                                <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -171,7 +179,8 @@
 
         </div>
         <!-- /.row -->
-
+        <a href="ajout_gym.php">Submit now</a>
+        <a href="ajout_gym.php"><button class="btn btn-primary btn-lg btn-block" type="submit">Ajouter une salle</button></a>
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -182,7 +191,7 @@
     <script src="assets/mail/jqBootstrapValidation.js"></script>
     <script src="assets/mail/contact_me.js"></script>
     <!-- Core theme JS-->
-    <script src="../assets/js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

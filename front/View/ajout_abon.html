@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+   
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-all.css">
+    <title>Creer un compte  </title>
+    
+    
+</head>
+
+<body>
+    <php include "../controller/GymC.php" ?>
+        
+   
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <br>
+                                <br>
+                                <h2 class="pageheader-title"> Abonnez-vous  </h2>
+                                 
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">La Salle </a></li>
+                                            
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="mb-0"> Salle </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form class="needs-validation" name="inscription" action="abonnement.php" method="POST" novalidate="">
+                                                
+                                                   
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="Name">first name :</label>
+                                                        
+                                                        <input type="text" name="firstname" class="form-control" id="firstname" placeholder="firstname" value="" required="">
+                                                        
+                                                    </div>
+                                               
+                                                <div class="mb-3">
+                                                    <label for="marque">last name</label>
+                                                    <div class="input-group">
+                                                      
+                                                        <input type="text" name="lastname" class="form-control" id="lastname" placeholder=""  required value="">
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label for="model">user name </label>
+                                                    <input type="text" name="username" class="form-control" id="username" placeholder="" required value="">
+                                                   
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="couleurs">email</label>
+                                                    <input type="email" name="email" class="form-control" id="email" placeholder="Peter.houston@yahoo.fr" required="">
+                                                    
+                                                </div>
+                                        
+                                               
+                                                <div class="mb-3">
+                                                    <label for="prix">adress1</label>
+                                                    <div class="input-group">
+                                                      
+                                                        <input type="text" name="adress1" class="form-control" id="adress1" placeholder="" required="">
+                                                        
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="prix">adress2</label>
+                                                        <div class="input-group">
+                                                          
+                                                            <input type="text" name="adress2" class="form-control" id="adress2" placeholder="" >
+                                                            
+                                                        </div>
+                                                <div class="mb-3">
+                                                    <label for="taille">pasword <span class="text-muted"></span></label>
+                                                    <input type="password" name="pasword" class="form-control" id="pasword" placeholder="">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="taille">country <span class="text-muted"></span></label>
+                                                    <input type="text" name="country" class="form-control" id="country" placeholder="">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="taille">stat <span class="text-muted"></span></label>
+                                                    <input type="text" name="stat" class="form-control" id="stat" placeholder="">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="taille">zip <span class="text-muted"></span></label>
+                                                    <input type="number" name="zip" class="form-control" id="zip" placeholder="">
+                                                </div>
+                                                
+                                                <hr class="mb-4">
+                                                <button class="btn btn-primary btn-lg btn-block" type="submit">Submit Now</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- ============================================================== -->
+            <!-- end wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1  -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js-->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js-->
+    <script src="assets/libs/js/main-js.js"></script>
+    <script src="app.js"></script>
+</body>
+
+ 
+</html>
