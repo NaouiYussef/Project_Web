@@ -1,7 +1,7 @@
 <?PHP
 	class Gym{
-		private $GymAdress = null;
-        private $GymId = null;
+		private  $GymAdress = null;
+     
         private $GymCapacity = null;
         private $GymEmail = null;
         private $GymNum = null;
@@ -11,12 +11,12 @@
 
         
 		
-	}
-        function __construct( string $GymAdress,int $GymId ,int $GymCapacity ,string $GymEmail ,int $GymNum ,string $GymName,string $GymPics){
+	
+        function __construct( string $GymAdress,int $GymCapacity ,string $GymEmail ,int $GymNum ,string $GymName,string $GymPics){
 			
 		
             $this->GymAdress=$GymAdress;
-            $this->GymId=$GymId;
+           
             $this->GymCapacity=$GymCapacity;
             $this->GymEmail=$GymEmail;
             $this->GymNum=$GymNum;
@@ -28,9 +28,7 @@
         function getGymAdress() : string{
             return $this->GymAdress;
         }
-        function getGymId() : int{
-            return $this->GymId;
-        }
+      
 		function getGymCapacity(): int{
             return $this->GymCapacity;
         }
@@ -49,6 +47,6 @@
             return $this->GymPics;
         }
 		
-	
+    }
 		
 	?>

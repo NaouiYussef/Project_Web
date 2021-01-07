@@ -3,7 +3,7 @@
 	require "../model/Gym.php";
 	
 
-	class gymC {
+	class GymC {
 		
 		function ajouterGym($GymAdress,$GymId,$GymCapacity,$GymEmail,$GymNum,$GymName,$GymPics){
 			$sql="INSERT INTO Gym(GymAdress,GymId,GymCapacity,GymEmail,GymNum,GymName,GymPics)
@@ -56,10 +56,10 @@
 		}
 		 function modifierGym($gym,$GymId){
 		 	try {
-				 var_dump($gym);
+			
 		 		$db = connection::getConnexion();
 		 		$query = $db->prepare(
-		 			"UPDATE gym SET 
+		 			'UPDATE gym SET 
 		 		   
 		 		    GymAdress=:GymAdress,
 		 			 
@@ -68,7 +68,7 @@
 					  GymNum=:GymNum,
 		 			 GymName=:GymName,
 		 			 GymPics=:GymPics
-		 			WHERE GymId=:GymId"
+		 			WHERE GymId=:GymId'
 		 		);
 			      $query->execute([
 					'GymAdress'=>$gym->getGymAdress(),

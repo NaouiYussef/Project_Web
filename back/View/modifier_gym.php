@@ -1,10 +1,10 @@
 
 <?php
-	include_once "../controller/GymC.php";
+	include_once "../Controller/GymC.php";
 	include_once "../Model/Gym.php";
 
-	$p= new gymC();
-	var_dump($_POST["GymCapacity"]);
+	$p= new GymC();
+     
 	if (
 		isset($_POST["GymAdress"]) && 
         isset($_POST["GymCapacity"])&&
@@ -19,7 +19,7 @@
 	){
         
         
-            $gym=new gym($_POST["GymAdress"],$_POST["GymId"],$_POST["GymCapacity"],$_POST["GymEmail"],$_POST["GymNum"],$_POST["GymName"],$_POST["GymPics"]);
+            $gym=new gym($_POST["GymAdress"],$_POST["GymCapacity"],$_POST["GymEmail"],$_POST["GymNum"],$_POST["GymName"],$_POST["GymPics"]);
             $p->modifierGym($gym,$_GET['GymId']);
             
             //header('refresh:1;url=../back/tables.php');
@@ -85,7 +85,7 @@ if (isset($_GET['GymId'])){
                                             <h4 class="mb-0"> Gym </h4>
                                         </div>
                                         <div class="card-body">
-                                            <form class="needs-validation" action="" method="POST" novalidate="">
+                                            <form class="needs-validation" action="" method="POST" >
                                                 
                                                 
                                                     <div class="col-md-6 mb-3">
@@ -139,7 +139,9 @@ if (isset($_GET['GymId'])){
                                                 
                                                 <hr class="mb-4">
                                                 <button class="btn btn-primary btn-lg btn-block" type="submit">Ajouter Maintenant</button>
+                                            
                                             </form>
+                                            
                                             <?php
 }
 ?>
