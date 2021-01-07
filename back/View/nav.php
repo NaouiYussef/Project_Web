@@ -57,6 +57,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            <a class="nav-link" href="tablesCommande.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables Commande
+                            </a>
                             <a class="nav-link" href="demande.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                                 Demandes
