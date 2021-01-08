@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 include_once "../connection.php";
-include "config.php";
+include "../assets/rating/config.php";
 
 ?>
 <head>
