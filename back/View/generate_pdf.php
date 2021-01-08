@@ -1,7 +1,7 @@
 <?php
 //include connection file
-include_once("../connection.php");
-include_once("../assets/libs/fpdf.php");
+include_once("../connectionsqli.php");;
+include_once("../libs/fpdf.php");
  
 class PDF extends FPDF
 {
@@ -33,7 +33,7 @@ function Footer()
  
 $db = new dbObj();
 $connString =  $db->getconnString();
-$display_heading = array('id'=>'ID', 'nom'=>'nom', 'prenom'=>'prenom','username'=>'username','email'=>'email','adress'=>'adress','adress2' =>'adress2','country'=>'country','zip'=>'zip','states'=>'states','method' =>'method','cards'=>'cards', 'expiration'=>'expiration','cvv'=>'cvv','promo'=>'promo');
+$display_heading = array('id'=>'id', 'nom'=>'nom', 'prenom'=>'prenom','username'=>'username','email'=>'email','adress'=>'adress','adress2' =>'adress2','country'=>'country','zip'=>'zip','states'=>'states','method' =>'method','cards'=>'cards', 'expiration'=>'expiration','cvv'=>'cvv','promo'=>'promo');
 $result = mysqli_query($connString, "SELECT * FROM commande WHERE id") or die("database error:". mysqli_error($connString));
 $header = mysqli_query($connString, "SHOW columns FROM commande");
  

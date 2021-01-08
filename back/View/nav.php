@@ -53,6 +53,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
+                            <a class="nav-link" href="afficherproduit.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                afficher produit
+                            </a>
                             <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
@@ -60,6 +64,10 @@
                             <a class="nav-link" href="tablesCommande.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables Commande
+                            </a>
+                            <a class="nav-link" href="afficherabonnement.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Abonnement
                             </a>
                             <a class="nav-link" href="demande.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>

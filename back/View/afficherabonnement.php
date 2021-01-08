@@ -1,14 +1,13 @@
+<!DOCTYPE html>
 <?PHP
-    include_once "../Controller/commandeC.php";
-    require_once "../connection.php";
-	require_once "../model/commandeM.php";
 
-	$commandeC=new commandeC();
-	$listeCommande=$commandeC->afficherCommande();
+include "../controller/abonnementC.php";
+$abonnement1C=new abonnementC();
+$listeabonnement=$abonnement1C->afficherabon();
+
 
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -18,7 +17,6 @@
         <meta name="author" content="" />
         <title>Tables - SB Admin</title>
         <link href="../assets/css/styles.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -108,7 +106,7 @@
                             </a>
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Commandes
+                                Tables
                             </a>
                         </div>
                     </div>
@@ -139,81 +137,104 @@
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                        <th>id</th>
-                                            <th>nom</th>
-                                            <th>prenom</th>
-                                            <th>username</th>
-                                            <th>email</th>
-                                            <th>adress</th>
-                                            <th>adress2</th>
-                                            <th>country</th>
-                                            <th>states</th>
-                                            <th>zip</th>
-                                            <th>method</th>
-                                            <th>cards</th>
-                                            <th>expiration</th>
-                                            <th>cvv</th>
-                                            <th>promo</th>
-                                            <th>supprimer</th>
-                                            <th>modifier</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?PHP
-				foreach($listeCommande as $commande){
-			?>
-				<tr>
-					<td><?PHP echo $commande['id']; ?></td>
-					<td><?PHP echo $commande['nom']; ?></td>
-                    <td><?PHP echo $commande['prenom']; ?></td>
-                    <td><?PHP echo $commande['username']; ?></td>
-                    <td><?PHP echo $commande['email']; ?></td>
-                    <td><?PHP echo $commande['adress']; ?></td>
-                    <td><?PHP echo $commande['adress2']; ?></td>
-                    <td><?PHP echo $commande['country']; ?></td>
-                    <td><?PHP echo $commande['states']; ?></td>
-                    <td><?PHP echo $commande['zip']; ?></td>
-                    <td><?PHP echo $commande['method']; ?></td>
-                    <td><?PHP echo $commande['cards']; ?></td>
-                    <td><?PHP echo $commande['expiration']; ?></td>
-                    <td><?PHP echo $commande['cvv']; ?></td>
-                    <td><?PHP echo $commande['promo']; ?></td>
-                    
-				
-					<td>
-						<form action="../view/SupprimerCommande.php" method="POST" >
-						<input type="submit" name="supprimer" value="supprimer" >
-                        <input type="hidden" value=<?PHP echo $commande['id']; ?> name='id'>
-                        </form>
-                    </td>
-                
-					<td>
-				<a href="../view/ModifierCommande.php?id=<?PHP echo $commande['id']; ?>">Modifier</a>
-						
-					</td>
+                            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Basic Datatable</h5>
+                                    <div class="card-body">
+                                    <a href="ajouterproduit.php"><input type="submit" name="ajouter" value="Ajouter" class="btn btn-primary btn-sm"></a>
+                                    <div class="imprimer">
+        <input id="impression" name="impression" class="btn btn-primary" type="submit" onclick="imprimer_page()" value="Imprimer la Page" />
+      </div>
+ 
+       <script type="text/javascript">
+            function imprimer_page(){
+            window.print();
+             }
+        </script>
+
+<br><br><br>
+                                                                    <form class="form-inline" method="POST" action="pdf.php" >
+                      <fieldset >
+
+                      <div class="form-group">
+                  
+                  
+                  <input type="submit" name="telecharger pdf" value="telecharger pdf" class="btn btn-info">
+                </div>
+                      </fieldset>
                     </form>
-				</tr>
-			<?PHP
-				}
-			?>
-                                       
-                                    </tbody>
-                                </table>
+
+                                </div>
+                                <div class="table-responsive">
+                                   
+
+
+<div class="table-responsive">
+                                    <table id="zero_config" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Firstname</th>
+                                                <th>Lastname</th>
+                                                <th>Username</th>
+                                                <th>email</th>
+                                                <th>adress1</th>
+                                                <th>adress2</th>
+                                                <th>password</th>
+                                                <th>country</th>
+                                                <th>stat</th>
+                                                <th>zip</th>
+                                                <th>Supprimer</th>
+                                                <th>Modifier</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <?PHP
+                                                foreach($listeabonnement as $row){
+                                                ?>
+                                            <tr>
+                                                <td><?PHP echo $row['firstname']; ?></td>
+                                                <td><?PHP echo $row['lastname']; ?></td>
+                                                <td><?PHP echo $row['username']; ?></td>
+                                                <td><?PHP echo $row['email']; ?></td>
+                                                <td><?PHP echo $row['adress1']; ?></td>
+                                                <td><?PHP echo $row['adress2']; ?></td>
+                                                <td><?PHP echo $row['pasword']; ?></td>
+                                                <td><?PHP echo $row['country']; ?></td>
+                                                <td><?PHP echo $row['stat']; ?></td>
+                                                <td><?PHP echo $row['zip']; ?></td>
+                                                <td><form method="POST" action="supprimercategorie2.php">
+                                                <input type="submit" name="supprimer" value="supprimer">
+                                                <input type="hidden" value="<?PHP echo $row['username']; ?>" name="username">
+                                                </form>
+                                                </td>
+                                                <td><a href="modifiercategorie2.php?username=<?PHP echo $row['username']; ?>">
+                                                Modifier</a></td>
+
+                                            </tr>
+                                                <?PHP
+                                                    }
+                                            ?>
+                                        </tbody>
+                                        <tfoot>
+                                            
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <form class="form-inline" method="post" action="generate_pdf.php">
-						<button type="submit"  id="pdf" name="generate_pdf" class="btn btn-primary"><i class="fas fa-file-pdf"></i>
-							Generate PDF</button>
-						</form>
-
                 </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-        
+                            </div>
+                        </div>
+                    </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
@@ -237,3 +258,8 @@
         <script src="assets/demo/datatables-demo.js"></script>
     </body>
 </html>
+
+
+
+
+

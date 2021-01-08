@@ -80,7 +80,7 @@
 
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="california/california_gym.php">California Gym</a>
+                                    <a href="california_gym.php">California Gym</a>
                                 </h4>
                                 <h5>$28</h5>
                                 <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
