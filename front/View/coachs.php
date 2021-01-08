@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include_once "../connection.php";
+include "../assets/rating/config.php";
 
+?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -18,6 +22,46 @@
     <link href="../assets/css/clubs/clubs-homepage.css" rel="stylesheet" />
 
     <link href="../assets/css/styles.css" rel="stylesheet" />
+    /<!-- CSS -->
+<link href="style.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+        <link href="front/assestsrating/jquery-bar-rating-master/dist/themes/fontawesome-stars.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+        $(function() {
+            $('.rating').barrating({
+                theme: 'fontawesome-stars',
+                onSelect: function(value, text, event) {
+
+                    // Get element id by data-id attribute
+                    var el = this;
+                    var el_id = el.$elem.data('id');
+
+                    // rating was selected by a user
+                    if (typeof(event) !== 'undefined') {
+                        
+                        var split_id = el_id.split("_");
+
+                        var postid = split_id[1];  // postid
+
+                        // AJAX Request
+                        $.ajax({
+                            url: 'rating/rating_ajax.php',
+                            type: 'post',
+                            data: {postid:postid,rating:value},
+                            dataType: 'json',
+                            success: function(data){
+                                // Update average
+                                var average = data['averageRating'];
+                                $('#avgrating_'+postid).text(average);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+      
+        </script>
+
 </head>
 
 <body id="page-top">
@@ -67,113 +111,95 @@
                 </div>
 
                 <div class="row">
+                    <?php
+                   $userid = 4;
+                      $query = "SELECT * FROM posts";
+                   $result = mysqli_query($con,$query);
+                  while($row = mysqli_fetch_array($result)){
+                    $postid = $row['id'];
+                    $title = $row['title'];
+                    $content = $row['content'];
+                    $link = $row['link'];
 
+                    // User rating
+                    $query = "SELECT * FROM post_rating WHERE postid=".$postid." and userid=".$userid;
+                    $userresult = mysqli_query($con,$query) or die(mysqli_error());
+                    $fetchRating = mysqli_fetch_array($userresult);
+                    $rating = $fetchRating['rating'];
+
+                    // get average
+                    $query = "SELECT ROUND(AVG(rating),1) as averageRating FROM post_rating WHERE postid=".$postid;
+                    $avgresult = mysqli_query($con,$query) or die(mysqli_error());
+                    $fetchAverage = mysqli_fetch_array($avgresult);
+                    $averageRating = $fetchAverage['averageRating'];
+
+                    if($averageRating <= 0){
+                        $averageRating = "No rating yet.";
+                    }
+?>
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item One</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
+                  <div class="card h-100">
+                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                  <div class="card-body">
+                  <h4 class="card-title">
+                  <a href="#">Item One</a>
+                   </h4>
+              
+                  <h5>$24.99</h5>
+                   <div class="post-action">
+                            <!-- Rating -->
+                            <select class='rating' id='rating_<?php echo $postid; ?>' data-id='rating_<?php echo $postid; ?>'>
+                                <option value="1" >1</option>
+                                <option value="2" >2</option>
+                                <option value="3" >3</option>
+                                <option value="4" >4</option>
+                                <option value="5" >5</option>
+                            </select>
+                            <div style='clear: both;'></div>
+                            Average Rating : <span id='avgrating_<?php echo $postid; ?>'><?php echo $averageRating; ?></span>
+
+                            <!-- Set rating -->
+                            <script type='text/javascript'>
+                            $(document).ready(function(){
+                                $('#rating_<?php echo $postid; ?>').barrating('set',<?php echo $rating; ?>);
+                            });
+                            
+                            </script>
+                        </div>              </div>
+                 <div class="card-footer">
+                  <div class=' text-center'>
+                 test
+                  </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Two</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
                     </div>
+                 </div>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Three</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Four</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Five</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Six</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.col-lg-9 -->
+               <?php
+                }
+                ?>
+    
+       
 
         </div>
         <!-- /.row -->
 
+      </div>
+      <!-- /.col-lg-9 -->
+
     </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
