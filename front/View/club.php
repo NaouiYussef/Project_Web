@@ -96,7 +96,7 @@
                             <a href="#"><img class="card-img-top" src="../assets/img/gym5.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Alpha Gym</a>
+                                    <a href="alpha_gym.php">Alpha Gym</a>
                                 </h4>
                                 <h5>$30</h5>
                                 <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
@@ -112,7 +112,7 @@
                             <a href="#"><img class="card-img-top" src="../assets/img/gym2.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Oxy-Gym</a>
+                                    <a href="oxy_gym.php">Oxy-Gym</a>
                                                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="coachs.php">Coachs</a></li>
 
                                 </h4>
@@ -127,7 +127,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="../assets/img/gym1.jpg" alt=""></a>
+                            <a href="smart_gym.php"><img class="card-img-top" src="../assets/img/gym1.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">Smart Gym</a>
@@ -143,7 +143,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="../assets/img/gym6.jpg" alt=""></a>
+                            <a href="tiger_gym.php"><img class="card-img-top" src="../assets/img/gym6.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">Tigers Gym</a>
@@ -162,7 +162,7 @@
                             <a href="#"><img class="card-img-top" src="../assets/img/gym3.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Bees Gym</a>
+                                    <a href="bees_gym.php">Bees Gym</a>
                                 </h4>
                                 <h5>$69</h5>
                                 <p class="card-text">we are here to make such a great web site , appreciate it please !</p>
