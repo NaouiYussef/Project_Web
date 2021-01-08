@@ -7,7 +7,7 @@
 
 	if (isset($_GET['id'])) {
 		$user1->supprimer($_GET['id']);
-        header("Location:tables.php");
+        header("Location:tables_feedback.php");
 	}
 
 ?>
@@ -121,7 +121,7 @@
                                                    <td><?PHP echo $user['email']; ?></td> 
                                                    <td><?PHP echo $user['phone']; ?></td> 
                                                    <td><?PHP echo $user['message']; ?></td> 
-                                                   <td> <a href="tables.php?id=<?PHP echo $user['id']; ?>">delete</a></td>
+                                                   <td> <a href="tables_feedback.php?id=<?PHP echo $user['id']; ?>">delete</a></td>
                                                    
                                                     
                                             </tr>

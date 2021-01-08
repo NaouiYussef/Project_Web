@@ -47,7 +47,7 @@
             }
             catch(PDOException $e) {
                 $e -> getMessage();
-                header("Location: index.php");
+                header("Location: ../view/tables_feedback.php");
 
             }
             }

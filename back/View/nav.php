@@ -61,6 +61,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            <a class="nav-link" href="tables_feedback.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables Feedback
+                            </a>
                             <a class="nav-link" href="tablesCommande.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables Commande
